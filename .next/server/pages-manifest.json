@@ -1,0 +1,12 @@
+{
+  "/_app": "pages/_app.js",
+  "/_error": "pages/_error.js",
+  "/_document": "pages/_document.js",
+  "/": "pages/index.js",
+  "/guest": "pages/guest.js",
+  "/staff": "pages/staff.js",
+  "/staff/login": "pages/staff/login.js",
+  "/command": "pages/command.js",
+  "/responder": "pages/responder.js",
+  "/404": "pages/404.js"
+}
