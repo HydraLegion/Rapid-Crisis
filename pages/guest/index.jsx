@@ -25,7 +25,6 @@ const TRIAGE_QUESTIONS = [
   { id:'chest',     q:'Is there chest pain or difficulty breathing?',     yes:'critical', no:'good' },
 ]
 
-const STEPS = ['type','location','triage','submitting','status']
 
 function StepDots({ step }) {
   const steps = ['type','location','triage']

@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import { useRouter } from 'next/router'
-import { useState, useEffect, useRef } from 'react'
-import { AlertTriangle, Clock, Shield, MapPin, Phone, Eye, EyeOff, Lock } from 'lucide-react'
+import { useState, useEffect } from 'react'
+import { AlertTriangle, Shield, MapPin, Phone, Eye, EyeOff, Lock } from 'lucide-react'
 import useStore from '../../store/useStore'
 import { SeverityPill, TYPE_META } from '../../components/shared/SeverityPill'
 

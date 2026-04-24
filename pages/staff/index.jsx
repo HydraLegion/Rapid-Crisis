@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import { useRouter } from 'next/router'
 import { useState, useEffect } from 'react'
-import { ArrowLeft, Search, CheckCircle, Send, Phone, AlertTriangle, Zap, X, Radio, User } from 'lucide-react'
+import { ArrowLeft, Search, CheckCircle, Send, Phone, Zap, Radio, User } from 'lucide-react'
 import useStore from '../../store/useStore'
 import { useToast } from '../../components/shared/ToastProvider'
 import { SeverityPill, StatusPill, TYPE_META } from '../../components/shared/SeverityPill'
@@ -106,7 +106,7 @@ function IncidentDetail({ incident, onBack }) {
           <div>
             <div className="timeline mb-4">
               {events.length === 0 && (<div className="empty-state"><div style={{ fontSize:32 }}>📋</div><div className="text-secondary text-sm">No events yet</div></div>)}
-              {events.map((ev, i) => (
+              {events.map((ev) => (
                 <div key={ev.id} className="timeline-item">
                   <div className="timeline-dot" style={{ background: ev.type==='report'?'var(--color-crisis)':ev.type==='ack'?'var(--color-blue)':ev.type==='resolve'?'var(--color-safe)':ev.type==='assign'?'var(--color-purple)':'var(--color-blue)' }} />
                   <div className="timeline-content">
@@ -281,7 +281,6 @@ function IncidentFeed({ incidents, onSelect }) {
 // ─── Main Dashboard ───────────────────────────────────────────────────────────
 export default function StaffDashboard() {
   const router = useRouter()
-  const toast  = useToast()
   const incidents = useStore(s => s.incidents)
   const [user, setUser] = useState(null)
   const [selected, setSelected] = useState(null)

@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import { useRouter } from 'next/router'
 import { useState, useEffect } from 'react'
-import { ArrowLeft, Send, BarChart2, Building2, Radio, Eye, EyeOff } from 'lucide-react'
+import { ArrowLeft, Radio, Eye, EyeOff } from 'lucide-react'
 import useStore from '../../store/useStore'
 import { useToast } from '../../components/shared/ToastProvider'
 import { SeverityPill, StatusPill, TYPE_META } from '../../components/shared/SeverityPill'
@@ -356,7 +356,7 @@ function CommandDashboard({ user }) {
           { label:'What happened?', ph:'Describe the incident from start to finish…' },
           { label:'What went well?', ph:'Response time, team coordination…' },
           { label:'What needs improvement?', ph:'Communication gaps, missing SOP steps…' },
-        ].map((f, i) => (
+        ].map((f) => (
           <div key={f.label} className="form-group mb-3">
             <label className="input-label">{f.label}</label>
             <textarea
