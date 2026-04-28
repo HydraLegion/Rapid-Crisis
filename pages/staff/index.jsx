@@ -18,9 +18,12 @@ function timeAgo(ts) {
 // ─── Incident Detail ──────────────────────────────────────────────────────────
 function IncidentDetail({ incident, onBack }) {
   const toast = useToast()
-  const { acknowledgeIncident, assignToMe, addTimelineEvent, resolveIncident, toggleTask, getIncidentEvents, getIncidentTasks } = useStore()
-  const events = useStore(() => getIncidentEvents(incident.id))
-  const tasks  = useStore(() => getIncidentTasks(incident.id))
+  const { acknowledgeIncident, assignToMe, addTimelineEvent, resolveIncident, toggleTask } = useStore()
+  const allEvents = useStore(s => s.events)
+  const allTasks  = useStore(s => s.tasks)
+  
+  const events = allEvents.filter(e => e.incidentId === incident.id).sort((a, b) => b.createdAt - a.createdAt)
+  const tasks  = allTasks.filter(t => t.incidentId === incident.id)
 
   const [tab, setTab]           = useState('timeline')
   const [update, setUpdate]     = useState('')
